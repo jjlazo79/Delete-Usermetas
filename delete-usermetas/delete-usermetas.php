@@ -3,7 +3,7 @@
  * Plugin Name: Delete usermetas
  * Plugin URI: http://joselazo.es/plugins/delete-usermetas
  * Description: This plugin delete any usermeta user by user or all user at same time.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Jose Lazo
  * Author URI: http://joselazo.es
  * Requires at least: 4.0
@@ -15,7 +15,7 @@
 defined( 'ABSPATH' ) or die( 'Bad dog. No biscuit!' );
 
 // First locate
-function delete_usermetas_translate() {
+function delumet_translate() {
     $domain = 'delete-usermetas';
     $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
     load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
@@ -23,13 +23,13 @@ function delete_usermetas_translate() {
 
     // load_plugin_textdomain('delete-usermetas', plugin_dir_url( __FILE__ ) . '/languages' );
 }
-add_action('init', 'delete_usermetas_translate');
+add_action('init', 'delumet_translate');
 
 // Second add to admin menu
- function delete_usermetas_register_options_page() {
-    add_options_page('Delete Usermetas', 'Delete Usermetas', 'manage_options', 'delete_usermetas', 'delete_usermetas_options_page');
+ function delumet_register_options_page() {
+    add_options_page('Delete Usermetas', 'Delete Usermetas', 'manage_options', 'delete_usermetas', 'delumet_options_page');
 }
-add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', 'delete_usermetas_register_options_page' );
+add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', 'delumet_register_options_page' );
 
 // Thirth enqueue admin script
 function delete_usermetas_enqueue_script() {
@@ -38,7 +38,7 @@ function delete_usermetas_enqueue_script() {
 add_action('admin_enqueue_scripts', 'delete_usermetas_enqueue_script');
 
 // Core Function to remove values of usermeta
-function say_goodbye_to_metadata( $usermeta, $user_id = false ) {
+function delumet_remove_metadata( $usermeta, $user_id = false ) {
     if ( $user_id ) {
         delete_user_meta( $user_id, $usermeta );
         return $user_id;
@@ -52,7 +52,7 @@ function say_goodbye_to_metadata( $usermeta, $user_id = false ) {
 }
 
 // Functions to sanitize query
-function delete_usermetas_options_page() {
+function delumet_options_page() {
     if ( isset($_POST['send_reset']) ) {
         // if ( $_POST['user_pass'] == 'DeleteUserMeta' ) {
             if ( !empty($_POST['user_userid']) && !is_numeric($_POST['user_userid']) ) {
@@ -64,13 +64,13 @@ function delete_usermetas_options_page() {
             } else {
                 $usermeta   = sanitize_key( $_POST['user_usermeta'] );
                 $user_id    = ( is_numeric( $_POST['user_userid'] ) ) ? $_POST['user_userid'] : false;
-                $ouput      = say_goodbye_to_metadata( $usermeta, $user_id );
+                $ouput      = delumet_remove_metadata( $usermeta, $user_id );
                 if ( is_array($ouput) ) {
                     $display = '<div class="notice notice-success is-dismissible"><p>'.__('Done it!', 'delete-usermetas').'</p>';
                     $display .= '<p>'.__('Updated users:', 'delete-usermetas').'</p>';
                     foreach ( $ouput as $user ) {
-                        $display .= '<hr>'.__( 'User Name: ',  'delete-usermetas' ) . $user->data->user_nicename . '<br>';
-                        $display .= __( 'User ID: ',    'delete-usermetas' ) . $user->data->ID . '<br>';
+                        $display .= '<hr>'.__( 'User Name: ', 'delete-usermetas' ) . $user->data->user_nicename . '<br>';
+                        $display .= __( 'User ID: ', 'delete-usermetas' ) . $user->data->ID . '<br>';
                         $display .= __( 'User email: ', 'delete-usermetas' ) . $user->data->user_email . '<br>';
                     }
                     $display .= '</div>';
@@ -78,8 +78,8 @@ function delete_usermetas_options_page() {
                     $user = get_user_by( 'id', $ouput );
                     $display = '<div class="notice notice-success is-dismissible"><p>'.__('Done it!', 'delete-usermetas').'</p>';
                     $display .= '<p>'.__('Updated users:', 'delete-usermetas').'</p>';
-                    $display .= '<hr>'.__( 'User Name: ',  'delete-usermetas' ) . $user->data->user_nicename . '<br>';
-                    $display .= __( 'User ID: ',    'delete-usermetas' ) . $user->data->ID . '<br>';
+                    $display .= '<hr>'.__( 'User Name: ', 'delete-usermetas' ) . $user->data->user_nicename . '<br>';
+                    $display .= __( 'User ID: ', 'delete-usermetas' ) . $user->data->ID . '<br>';
                     $display .= __( 'User email: ', 'delete-usermetas' ) . $user->data->user_email . '<br>';
                     $display .= '</div>';
                 }
