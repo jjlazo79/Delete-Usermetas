@@ -1,0 +1,103 @@
+# Copyright (C) 2018 delete-usermetas
+# This file is distributed under the same license as the delete-usermetas package.
+msgid ""
+msgstr ""
+"Project-Id-Version: delete-usermetas\n"
+"POT-Creation-Date: 2018-10-26 09:19+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jose Lazo <jjlazo79@gnmail.com>\n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
+"_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;"
+"esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: delete-usermetas.php:60
+msgid "Please, enter a number in User ID field."
+msgstr "Por favor, ingrese un número en el campo ID de usuario."
+
+#: delete-usermetas.php:64
+msgid "What about User_meta?"
+msgstr "¿Qué hay de User_meta?"
+
+#: delete-usermetas.php:70 delete-usermetas.php:80
+msgid "Done it!"
+msgstr "¡Todo hecho!"
+
+#: delete-usermetas.php:71 delete-usermetas.php:81
+msgid "Updated users:"
+msgstr "Usuarios actualizados:"
+
+#: delete-usermetas.php:73 delete-usermetas.php:82
+msgid "User Name: "
+msgstr "Nombre de usuario: "
+
+#: delete-usermetas.php:74 delete-usermetas.php:83
+msgid "User ID: "
+msgstr "ID de Usuario: "
+
+#: delete-usermetas.php:75 delete-usermetas.php:84
+msgid "User email: "
+msgstr "Email del usuario: "
+
+#: delete-usermetas.php:97
+msgid "Delete UserMetas"
+msgstr "Eliminar metadatos de usuario"
+
+#: delete-usermetas.php:99
+msgid "This tool is very powerfull! Use it with care"
+msgstr "¡Esta herramienta es muy poderosa! Utilícela con cuidado"
+
+#: delete-usermetas.php:100
+msgid ""
+"This tool can erase user´s data of <b>ALL</b> the users of the web. The "
+"first drop-down is a list of all the metadata that are currently stored on "
+"this website. Those preceded by a hyphen under \"_\" are system data or "
+"hidden from the users themselves. Please, do not try to eliminate these."
+msgstr ""
+"Esta herramienta puede borrar los datos de usuario de <b>todos los</b> los "
+"usuarios de la Web. El primer desplegable es una lista de todos los "
+"metadatos que están almacenados actualmente en este sitio Web. Aquellos "
+"precedidos por un guión bajo \"_\" son datos del sistema o ocultos de los "
+"propios usuarios. Por favor, no trates de eliminarlos."
+
+#: delete-usermetas.php:106
+msgid "User meta to delete"
+msgstr "Metadato del usuario a eliminar"
+
+#: delete-usermetas.php:116
+msgid "Select a metadata"
+msgstr "Seleccionar metadato"
+
+#: delete-usermetas.php:124
+msgid ""
+"Enter the usermeta to delete e.g. first_name. NOTE: the values of this "
+"usermeta will be deleted."
+msgstr ""
+"Ingrese el usermeta para borrar, por ejemplo, first_name. Nota: los valores "
+"de este usermeta serán borrados."
+
+#: delete-usermetas.php:129
+msgid "User ID to delete metadata"
+msgstr "ID de usuario para eliminar metadatos"
+
+#: delete-usermetas.php:134
+msgid ""
+"Enter the user ID to delete the above usermeta. <b>Leave blank </b> to "
+"delete the above usermeta to <b>ALL users.</b>"
+msgstr ""
+"Introduzca el ID de usuario para eliminar el usermeta anterior. <b>dejar en "
+"blanco</b> para eliminar el usermeta anterior a <b>todos los usuarios.</b>"
+
+#: delete-usermetas.php:150
+msgid "Delete usermeta"
+msgstr "Eliminar metadato"
