@@ -19,7 +19,7 @@ function delumet_translate() {
     $domain = 'delete-usermetas';
     $locale = apply_filters( 'plugin_locale', get_locale(), $domain );
     load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
-    // load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/languages' );
+    load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/languages' );
 
     // load_plugin_textdomain('delete-usermetas', plugin_dir_url( __FILE__ ) . '/languages' );
 }
@@ -33,7 +33,7 @@ add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', 'delumet_regis
 
 // Thirth enqueue admin script
 function delete_usermetas_enqueue_script() {
-    wp_enqueue_script( 'du_alert_script', plugin_dir_url( __FILE__ ) . 'js/alert.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'delumet_alert_script', plugin_dir_url( __FILE__ ) . 'js/alert.js', array('jquery'), '1.0.0', true );
 }
 add_action('admin_enqueue_scripts', 'delete_usermetas_enqueue_script');
 
