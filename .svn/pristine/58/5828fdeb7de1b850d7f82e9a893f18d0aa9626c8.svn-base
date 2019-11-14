@@ -1,0 +1,70 @@
+# Copyright (C) 2018 delete-usermetas
+# This file is distributed under the same license as the delete-usermetas package.
+msgid ""
+msgstr ""
+"Project-Id-Version: delete-usermetas\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: delete-usermetas.php:56
+msgid "What about User_meta?"
+msgstr ""
+
+#: delete-usermetas.php:61
+msgid "Done it!"
+msgstr ""
+
+#: delete-usermetas.php:61
+msgid "Updated users:"
+msgstr ""
+
+#: delete-usermetas.php:82
+msgid "Delete UserMetas"
+msgstr ""
+
+#: delete-usermetas.php:84
+msgid "This tool is very powerfull! Use it with care"
+msgstr ""
+
+#: delete-usermetas.php:85
+msgid ""
+"This tool can erase user´s data of <b>ALL</b> the users of the web. The "
+"first drop-down is a list of all the metadata that are currently stored on "
+"this website. Those preceded by a hyphen under \"_\" are system data or "
+"hidden from the users themselves. Please, do not try to eliminate these."
+msgstr ""
+
+#: delete-usermetas.php:91
+msgid "User meta to delete"
+msgstr ""
+
+#: delete-usermetas.php:101
+msgid "Select a metadata"
+msgstr ""
+
+#: delete-usermetas.php:109
+msgid ""
+"Enter the usermeta to delete e.g. first_name. NOTE: the values of this "
+"usermeta will be deleted."
+msgstr ""
+
+#: delete-usermetas.php:114
+msgid "User ID to delete metadata"
+msgstr ""
+
+#: delete-usermetas.php:119
+msgid ""
+"Enter the user ID to delete the above usermeta. <b>Leave blank </b> to "
+"delete the above usermeta to <b>ALL users.</b>"
+msgstr ""
+
+#: delete-usermetas.php:135
+msgid "Delete usermeta"
+msgstr ""
