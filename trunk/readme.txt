@@ -2,7 +2,7 @@
 Contributors: jose-lazo
 Tags: users, usermetas
 Requires at least: 4.2
-Tested up to: 4.7
+Tested up to: 5.3
 Stable tag: 5.3
 Requires PHP: 5.2.4
 License: GPLv2 or later
