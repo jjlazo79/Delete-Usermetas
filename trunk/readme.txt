@@ -1,8 +1,8 @@
 === Delete Usermetas ===
-Contributors: jose-lazo
+Contributors: jose-lazo, lebiramdc
 Tags: users, usermetas
 Requires at least: 4.2
-Tested up to: 5.3
+Tested up to: 5.5
 Stable tag: 5.3
 Requires PHP: 5.2.4
 License: GPLv2 or later
@@ -51,3 +51,12 @@ No, you can't yet (next release). If you need to delete one metadata to multiple
 == Screenshots ==
 
 1. Easy and intuitive interface
+
+== Changelog ==
+
+= 1.1 =
+* Tested 5.5.3
+* Fixed minor bugs
+
+= 1.0 =
+* Initial release
