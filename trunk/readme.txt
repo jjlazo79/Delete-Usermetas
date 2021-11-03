@@ -2,7 +2,7 @@
 Contributors: jose-lazo, lebiramdc
 Tags: users, usermetas
 Requires at least: 4.2
-Tested up to: 5.5
+Tested up to: 5.8
 Stable tag: 5.3
 Requires PHP: 5.2.4
 License: GPLv2 or later
@@ -53,6 +53,9 @@ No, you can't yet (next release). If you need to delete one metadata to multiple
 1. Easy and intuitive interface
 
 == Changelog ==
+
+= 1.1.1 =
+* Tested 5.8.1
 
 = 1.1 =
 * Tested 5.5.3
