@@ -4,12 +4,11 @@
  * Plugin Name: Delete usermetas
  * Plugin URI: http://joselazo.es/plugins/delete-usermetas
  * Description: This plugin delete any usermeta user by user or all user at same time.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: Jose Lazo
  * Author URI: http://joselazo.es
  * Requires at least: 4.2
- * Tested up to: 5.8
- *
+ * Tested up to: 6.1
  * Text Domain: delete-usermetas
  * Domain Path: /languages/
  */
