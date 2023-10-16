@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: delete-usermetas\n"
-"POT-Creation-Date: 2018-10-26 09:19+0200\n"
+"POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jose Lazo <jjlazo79@gnmail.com>\n"
 "Language-Team: \n"
@@ -17,47 +17,55 @@ msgstr ""
 "esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: delete-usermetas.php:60
+#: delete-usermetas.php:30
+msgid "Delete Usermetas"
+msgstr "Eliminar metadatos de usuario"
+
+#: delete-usermetas.php:61
+msgid "Sorry, your nonce did not verify."
+msgstr "Lo siento, tu nonce no se verificó."
+
+#: delete-usermetas.php:65
 msgid "Please, enter a number in User ID field."
 msgstr "Por favor, ingrese un número en el campo ID de usuario."
 
-#: delete-usermetas.php:64
+#: delete-usermetas.php:69
 msgid "What about User_meta?"
 msgstr "¿Qué hay de User_meta?"
 
-#: delete-usermetas.php:70 delete-usermetas.php:80
+#: delete-usermetas.php:75 delete-usermetas.php:85
 msgid "Done it!"
 msgstr "¡Todo hecho!"
 
-#: delete-usermetas.php:71 delete-usermetas.php:81
+#: delete-usermetas.php:76 delete-usermetas.php:86
 msgid "Updated users:"
 msgstr "Usuarios actualizados:"
 
-#: delete-usermetas.php:73 delete-usermetas.php:82
+#: delete-usermetas.php:78 delete-usermetas.php:87
 msgid "User Name: "
 msgstr "Nombre de usuario: "
 
-#: delete-usermetas.php:74 delete-usermetas.php:83
+#: delete-usermetas.php:79 delete-usermetas.php:88
 msgid "User ID: "
 msgstr "ID de Usuario: "
 
-#: delete-usermetas.php:75 delete-usermetas.php:84
+#: delete-usermetas.php:80 delete-usermetas.php:89
 msgid "User email: "
 msgstr "Email del usuario: "
 
-#: delete-usermetas.php:97
+#: delete-usermetas.php:99
 msgid "Delete UserMetas"
 msgstr "Eliminar metadatos de usuario"
 
-#: delete-usermetas.php:99
+#: delete-usermetas.php:101
 msgid "This tool is very powerfull! Use it with care"
 msgstr "¡Esta herramienta es muy poderosa! Utilícela con cuidado"
 
-#: delete-usermetas.php:100
+#: delete-usermetas.php:102
 msgid ""
 "This tool can erase user´s data of <b>ALL</b> the users of the web. The "
 "first drop-down is a list of all the metadata that are currently stored on "
@@ -70,15 +78,15 @@ msgstr ""
 "precedidos por un guión bajo \"_\" son datos del sistema o ocultos de los "
 "propios usuarios. Por favor, no trates de eliminarlos."
 
-#: delete-usermetas.php:106
+#: delete-usermetas.php:108
 msgid "User meta to delete"
 msgstr "Metadato del usuario a eliminar"
 
-#: delete-usermetas.php:116
+#: delete-usermetas.php:118
 msgid "Select a metadata"
 msgstr "Seleccionar metadato"
 
-#: delete-usermetas.php:124
+#: delete-usermetas.php:126
 msgid ""
 "Enter the usermeta to delete e.g. first_name. NOTE: the values of this "
 "usermeta will be deleted."
@@ -86,11 +94,15 @@ msgstr ""
 "Ingrese el usermeta para borrar, por ejemplo, first_name. Nota: los valores "
 "de este usermeta serán borrados."
 
-#: delete-usermetas.php:129
+#: delete-usermetas.php:131
 msgid "User ID to delete metadata"
 msgstr "ID de usuario para eliminar metadatos"
 
-#: delete-usermetas.php:134
+#: delete-usermetas.php:135
+msgid "All user (or select one)"
+msgstr "Todos los usuarios (o elija uno)"
+
+#: delete-usermetas.php:144
 msgid ""
 "Enter the user ID to delete the above usermeta. <b>Leave blank </b> to "
 "delete the above usermeta to <b>ALL users.</b>"
@@ -98,6 +110,6 @@ msgstr ""
 "Introduzca el ID de usuario para eliminar el usermeta anterior. <b>dejar en "
 "blanco</b> para eliminar el usermeta anterior a <b>todos los usuarios.</b>"
 
-#: delete-usermetas.php:150
+#: delete-usermetas.php:151
 msgid "Delete usermeta"
 msgstr "Eliminar metadato"

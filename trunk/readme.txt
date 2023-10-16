@@ -30,7 +30,7 @@ The deleted data can not be recovered, so we strongly recommend making a backup 
 
 If you leave the User ID field blank, the deletion of the metadata will apply to ALL users. But if you add a user ID, only the chosen metadata of that user will be deleted.
 
-You can know the user ID by going to Admin --> Users --> Edit. The ID will appear in the URL with something like "user_id=3".
+Now you can select user by dropdown!
 
 == Installation ==
 
@@ -53,6 +53,12 @@ No, you can't yet (next release). If you need to delete one metadata to multiple
 1. Easy and intuitive interface
 
 == Changelog ==
+
+= 1.2.0 =
+* Tested 6.3
+* Fixed security issue with nonces
+* Added list of users in the selection input 
+* Added some translatable strings
 
 = 1.1.2 =
 * Tested 6.1

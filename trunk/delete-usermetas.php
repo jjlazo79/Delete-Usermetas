@@ -4,7 +4,7 @@
  * Plugin Name: Delete usermetas
  * Plugin URI: http://joselazo.es/plugins/delete-usermetas
  * Description: This plugin delete any usermeta user by user or all user at same time.
- * Version: 1.1.2
+ * Version: 1.2.0
  * Author: Jose Lazo
  * Author URI: http://joselazo.es
  * Requires at least: 4.2
@@ -27,7 +27,7 @@ add_action( 'init', 'delumet_translate' );
 // Second add to admin menu
 function delumet_register_options_page()
 {
-	add_options_page( 'Delete Usermetas', 'Delete Usermetas', 'manage_options', 'delete_usermetas', 'delumet_options_page' );
+	add_management_page( __('Delete Usermetas', 'delete-usermetas'), __('Delete Usermetas', 'delete-usermetas'), 'administrator', 'delete_usermetas', 'delumet_options_page' );
 }
 add_action(is_multisite() ? 'network_admin_menu' : 'admin_menu', 'delumet_register_options_page' );
 
@@ -56,17 +56,21 @@ function delumet_remove_metadata( $usermeta, $user_id = false )
 // Functions to sanitize query
 function delumet_options_page()
 {
-	if ( isset( $_POST['send_reset']) ) {
-		if ( !empty( $_POST['user_userid']) && !is_numeric( $_POST['user_userid']) ) {
+	if ( isset($_POST['send_reset']) ) {
+		if ( !wp_verify_nonce( $_POST['delumet_nonce'], 'delumet_action' ) ) {
+			echo '<div class="notice notice-error"><p>' . __( 'Sorry, your nonce did not verify.', 'delete-usermetas' ) . '</p></div>';
+			exit;
+		}
+		if ( empty( $_POST['user_userid']) ) {
 			echo '<div class="notice notice-error"><p>' . __( 'Please, enter a number in User ID field.', 'delete-usermetas' ) . '</p></div>';
 			exit;
 		} // end if/else numeric
 		if ( !$_POST['user_usermeta'] ) {
 			echo '<div class="notice notice-error is-dismissible"><p>' . __( 'What about User_meta?', 'delete-usermetas' ) . '</p></div>';
 		} else {
-			$usermeta   = sanitize_key( $_POST['user_usermeta'] );
-			$user_id    = ( is_numeric( $_POST['user_userid']) ) ? $_POST['user_userid'] : false;
-			$ouput      = delumet_remove_metadata( $usermeta, $user_id);
+			$usermeta = sanitize_key( $_POST['user_usermeta'] );
+			$user_id  = ( is_numeric( $_POST['user_userid']) ) ? $_POST['user_userid'] : false;
+			$ouput    = delumet_remove_metadata( $usermeta, $user_id);
 			if (is_array( $ouput)) {
 				$display = '<div class="notice notice-success is-dismissible"><p>' . __( 'Done it!', 'delete-usermetas' ) . '</p>';
 				$display .= '<p>' . __( 'Updated users:', 'delete-usermetas' ) . '</p>';
@@ -127,13 +131,22 @@ function delumet_options_page()
 								<label for="user_userid"><?php _e( 'User ID to delete metadata', 'delete-usermetas' ); ?></label>
 							</th>
 							<td>
-								<input class="regular-text" type="number" id="user_userid" name="user_userid" value="">
+								<select required class="regular-text" type="text" id="user_userid" name="user_userid">
+									<option value="false"><?php _e( 'All user (or select one)', 'delete-usermetas' ); ?></option>
+									<?php
+									$users = get_users();
+									foreach ( $users as $user ) {
+										if ( substr( $usermeta->meta_key, 0, 1) === "_" ) continue;
+										echo '<option value="' . $user->ID . '">' . $user->ID . '-(' . esc_html( $user->display_name ) . ')</option>';
+									} ?>
+								</select>
 								<br>
 								<span class="description"><?php _e( 'Enter the user ID to delete the above usermeta. <b>Leave blank </b> to delete the above usermeta to <b>ALL users.</b>', 'delete-usermetas' ); ?></span>
 							</td>
 						</tr>
 					</tbody>
 				</table>
+				<?php wp_nonce_field( 'delumet_action', 'delumet_nonce', true, true ); ?>
 				<p class="submit">
 					<input type="submit" class="button-primary" name="send_reset" value="<?php _e( 'Delete usermeta', 'delete-usermetas' ) ?>" />
 				</p>
